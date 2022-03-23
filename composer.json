@@ -1,0 +1,16 @@
+{
+    "name": "creativestyle/magesuite-mftf",
+    "description": "MageSuite Magento Functional Testing Framework",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "MageSuite\\Mftf\\": ""
+        }
+    }
+}
+
