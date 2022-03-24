@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="StorefrontProductActionSection">
+        <element name="addToCart" type="button" selector="//*[@id='product_addtocart_form']//button[contains(@class, 'cs-addtocart__button')]" timeout="60"/>
+    </section>
+</sections>
