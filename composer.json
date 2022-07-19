@@ -7,7 +7,7 @@
         "AFL-3.0"
     ],
     "require": {
-        "magento/magento2-functional-testing-framework": "3.5.1"
+        "magento/magento2-functional-testing-framework": "3.10.0"
     },
     "autoload": {
         "files": [ "registration.php" ],
