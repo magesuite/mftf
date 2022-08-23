@@ -3,6 +3,7 @@
     <module name="MageSuite_Mftf">
         <sequence>
             <module name="Magento_FunctionalTestingFramework"/>
+            <module name="Magento_Checkout"/>
         </sequence>
     </module>
 </config>

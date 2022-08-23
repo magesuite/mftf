@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
-    <actionGroup name="MagesuiteAcceptCookiePolicyActionGroup">
+    <actionGroup name="GoToCheckoutFromSidebarActionGroup">
         <annotations>
-            <description>Clicks on 'Allow Cookies' button.</description>
+            <description>Clicks on 'Proceed to Checkout'.</description>
         </annotations>
-        <click selector="{{MagesuiteStorefrontUserCookiePolicySection.acceptAll}}" stepKey="clickAcceptCookie"/>
+        <click selector="{{StorefrontMinicartSection.goToCheckout}}" stepKey="goToCheckout"/>
     </actionGroup>
 </actionGroups>

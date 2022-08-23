@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="CheckCheckoutSuccessPageAsGuestTest">
+        <annotations>
+            <group value="magesuite"/>
+        </annotations>
+        <!--Accept cookie policy-->
+        <actionGroup ref="AcceptCookiePolicyActionGroup" stepKey="acceptCookiePolicy" after="navigateToSimpleProductPage"/>
+
+        <!-- Remove GoToCheckoutFromMinicartActionGroup and add GoToCheckoutFromSidebarActionGroup -->
+        <remove keyForRemoval="goToCheckoutFromMinicart"/>
+        <actionGroup ref="GoToCheckoutFromSidebarActionGroup" stepKey="goToCheckoutFromSidebar" after="addToCartFromStorefrontProductPage"/>
+
+        <!-- Checkout select Buy as guest -->
+        <actionGroup ref="CheckoutSelectByAsAGuestActionGroup" stepKey="clickByAsAGuest" after="goToCheckoutFromSidebar"/>
+
+        <!-- Update userInput on success page -->
+        <see selector="{{CheckoutSuccessMainSection.successTitle}}" userInput="Thank you for placing your order" stepKey="seeSuccessTitle"/>
+
+        <remove keyForRemoval="seeSuccessNotify"/>
+        <remove keyForRemoval="seeRegisterMessage"/>
+        <remove keyForRemoval="seeCustomerEmail"/>
+        <remove keyForRemoval="seeVisibleCreateAccountButton"/>
+        <remove keyForRemoval="clickCreateAccountButton"/>
+        <remove keyForRemoval="seeCreateAccountPage"/>
+        <remove keyForRemoval="seeCreateAccountPageTitle"/>
+
+        <!-- Remove GoToCheckoutFromMinicartActionGroup and add GoToCheckoutFromSidebarActionGroup -->
+        <remove keyForRemoval="goToCheckoutFromMinicart2"/>
+        <actionGroup ref="GoToCheckoutFromSidebarActionGroup" stepKey="goToCheckoutFromSidebar2" after="addToCartFromStorefrontProductPage2"/>
+
+        <!-- Checkout select Buy as guest -->
+        <actionGroup ref="CheckoutSelectByAsAGuestActionGroup" stepKey="clickByAsAGuest2" after="goToCheckoutFromSidebar2"/>
+
+        <!-- Update userInput on success page -->
+        <see selector="{{CheckoutSuccessMainSection.successTitle}}" userInput="Thank you for placing your order" stepKey="waitForLoadSuccessPage2"/>
+
+        <!-- Remove checking home page title -->
+        <remove keyForRemoval="seeHomePageTitle"/>
+    </test>
+</tests>
